@@ -8,7 +8,6 @@ import com.fict.vh.validator.NoteValidator;
 import com.fict.vh.view.View;
 import lombok.AllArgsConstructor;
 
-import java.util.List;
 import java.util.Scanner;
 
 @AllArgsConstructor

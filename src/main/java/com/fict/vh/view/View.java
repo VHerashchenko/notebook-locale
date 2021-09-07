@@ -12,7 +12,7 @@ public class View {
     public static final ResourceBundle resourceBundle =
             ResourceBundle.getBundle(
                     InputMessages.BUNDLE_NAME.getValue(),
-                    new Locale(/*Instant.now().getEpochSecond() % 2 == 0 ? "ua" :*/ "en"));
+                    new Locale(Instant.now().getEpochSecond() % 2 == 0 ? "ua" : "en"));
 
 
     public void printMessage(String message){

@@ -1,6 +1,7 @@
 package com.fict.vh.service;
 
 import com.fict.vh.model.NoteModel;
+import com.fict.vh.model.exception.LoginException;
 import com.fict.vh.validator.NoteValidator;
 import com.fict.vh.view.View;
 
@@ -20,7 +21,7 @@ public interface NoteService {
     void enterPhone(Scanner scanner, View view,
                     NoteValidator noteValidator, NoteModel noteModel);
 
-    void addNoteModel(NoteModel noteModel);
+    void addNoteModel(NoteModel noteModel) throws LoginException;
 
     List<NoteModel> getAllNoteModel();
 }

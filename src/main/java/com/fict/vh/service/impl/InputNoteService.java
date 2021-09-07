@@ -68,7 +68,7 @@ public class InputNoteService implements NoteService {
                 view.getStringRegexFromLocale(RegexInput.REGEX_PHONE), view, InputMessages.PHONE_INPUT));
     }
 
-    public void addNoteModel(NoteModel noteModel) throws LoginException{
+    public void addNoteModel(NoteModel noteModel) throws LoginException {
         noteModelRepository.insertNoteModel(noteModel);
     }
 
