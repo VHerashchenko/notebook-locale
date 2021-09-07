@@ -44,4 +44,8 @@ public class View {
     public String getStringRegexFromLocale(RegexInput input){
         return resourceBundle.getString(input.getRegex());
     }
+
+    public String getLoginInvalidMessage(){
+        return resourceBundle.getString(InputMessages.ERROR_LOGIN_MESSAGE.getValue());
+    }
 }

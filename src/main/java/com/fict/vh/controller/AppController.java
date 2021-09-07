@@ -39,16 +39,39 @@ public class AppController {
         try{
             noteService.addNoteModel(noteModel);
         } catch (LoginException loginException){
-            view.printMessage(loginException.getMessage());
+            view.printMessage(
+                    view.appendSting(
+                            view.getLoginInvalidMessage(),
+                            loginException.getMessage()));
+
             noteService.enterLogin(scanner, view, noteValidator, noteModel);
             loginCatch(scanner);
         }
     }
 
     private void addSomeUsersToRepo(){
-        noteService.addNoteModel(new NoteModel("John", "login1", "John@gmail.com", "+380679555499"));
-        noteService.addNoteModel(new NoteModel("Nike", "login2", "Nike@gmail.com", "+380678989499"));
-        noteService.addNoteModel(new NoteModel("Semen", "login3", "Semen@gmail.com", "+380464646499"));
-        noteService.addNoteModel(new NoteModel("Ann", "login4", "Ann@gmail.com", "+380050402299"));
+        noteService.addNoteModel(new NoteModel(
+                "John",
+                "login1",
+                "John@gmail.com",
+                "+380679555499"));
+
+        noteService.addNoteModel(new NoteModel(
+                "Nike",
+                "login2",
+                "Nike@gmail.com",
+                "+380678989499"));
+
+        noteService.addNoteModel(new NoteModel(
+                "Semen",
+                "login3",
+                "Semen@gmail.com",
+                "+380464646499"));
+
+        noteService.addNoteModel(new NoteModel(
+                "Ann",
+                "login4",
+                "Ann@gmail.com",
+                "+380050402299"));
     }
 }
