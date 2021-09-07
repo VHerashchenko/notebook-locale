@@ -4,6 +4,7 @@ import com.fict.vh.model.NoteModel;
 import com.fict.vh.validator.NoteValidator;
 import com.fict.vh.view.View;
 
+import java.util.List;
 import java.util.Scanner;
 
 public interface NoteService {
@@ -18,4 +19,8 @@ public interface NoteService {
 
     void enterPhone(Scanner scanner, View view,
                     NoteValidator noteValidator, NoteModel noteModel);
+
+    void addNoteModel(NoteModel noteModel);
+
+    List<NoteModel> getAllNoteModel();
 }

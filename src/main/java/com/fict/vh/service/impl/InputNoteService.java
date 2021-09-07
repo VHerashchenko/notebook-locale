@@ -3,13 +3,19 @@ package com.fict.vh.service.impl;
 import com.fict.vh.enums.InputMessages;
 import com.fict.vh.enums.RegexInput;
 import com.fict.vh.model.NoteModel;
+import com.fict.vh.model.exception.LoginException;
+import com.fict.vh.repository.NoteModelRepository;
+import com.fict.vh.repository.impl.NoteModelRepositoryImpl;
 import com.fict.vh.service.NoteService;
 import com.fict.vh.validator.NoteValidator;
 import com.fict.vh.view.View;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class InputNoteService implements NoteService {
+
+    private final NoteModelRepository noteModelRepository = new NoteModelRepositoryImpl();
 
     /**
      * This method prints message to terminal, gets the string
@@ -60,5 +66,13 @@ public class InputNoteService implements NoteService {
         view.printInputMessage(InputMessages.PHONE_INPUT);
         noteModel.setPhoneNumber(noteValidator.validator(scanner,
                 view.getStringRegexFromLocale(RegexInput.REGEX_PHONE), view, InputMessages.PHONE_INPUT));
+    }
+
+    public void addNoteModel(NoteModel noteModel) throws LoginException{
+        noteModelRepository.insertNoteModel(noteModel);
+    }
+
+    public List<NoteModel> getAllNoteModel() {
+        return noteModelRepository.selectAllNoteModel();
     }
 }
